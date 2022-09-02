@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/nycHighSchoolListFragment">
+
+
+  <fragment
+    android:id="@+id/nycHighSchoolListFragment"
+    android:name="com.nyc.highschool.feature.nychighSchool.NychighSchoolListFragment"
+    android:label="fragment_my_home"
+    tools:layout="@layout/fragment_nyc_highschool_list">
+
+    <action
+      android:id="@+id/action_nychHighSchoolFragment_to_sat_ScoreFragment"
+      app:destination="@id/satScoreFragment" />
+
+  </fragment>
+
+
+  <fragment
+    android:id="@+id/satScoreFragment"
+    android:name="com.nyc.highschool.feature.satscore.MovieDetailFragment"
+    android:label="fragment_sat_score"
+    tools:layout="@layout/fragment_sat_score_detail">
+
+    <argument
+      android:name="movie"
+      app:argType="com.digi.tmdb.feature.movielist.listResponse.BaseListResponse" />
+
+  </fragment>
+
+</navigation>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <variable
+      name="movieDetailViewModel"
+      type="com.nyc.highschool.feature.satscore.viewmodel.SatScoreViewModel" />
+
+
+    <import type="android.view.View" />
+
+  </data>
+
+  <androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".details.DetailMoviePopularActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/grey_light"
+      android:padding="10dp">
+
+      <ImageView
+        android:id="@+id/backdrop_image"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:background="@color/grey_light"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+      <ImageView
+        android:id="@+id/poster_image"
+        android:layout_width="150dp"
+        android:layout_height="220dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backdrop_image" />
+
+      <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/md_grey_900"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poster_image">
+
+
+        <TextView
+          android:id="@+id/tv_name"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:textAlignment="center"
+          android:textAppearance="?attr/textAppearanceHeadline4"
+          android:textColor="@color/md_grey_900" />
+
+
+      </androidx.cardview.widget.CardView>
+
+
+      <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_marginVertical="20dp">
+
+          <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_start"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+          <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_end"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+          <!-- ================= Chain =================== -->
+
+          <ImageButton
+            android:id="@+id/ib_average_vote"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_average_count"
+            app:layout_constraintEnd_toStartOf="@+id/iv_movie_duration"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_start"
+            app:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+            android:id="@+id/tv_average_vote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/ib_average_vote"
+            app:layout_constraintStart_toStartOf="@+id/ib_average_vote"
+            app:layout_constraintTop_toBottomOf="@+id/ib_average_vote" />
+
+
+          <ImageButton
+            android:id="@+id/iv_movie_duration"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_runtime"
+            app:layout_constraintEnd_toStartOf="@+id/iv_revenue"
+            app:layout_constraintStart_toEndOf="@+id/ib_average_vote"
+            app:layout_constraintTop_toTopOf="@+id/ib_average_vote" />
+
+          <TextView
+            android:id="@+id/tv_movie_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_movie_duration"
+            app:layout_constraintStart_toStartOf="@+id/iv_movie_duration"
+            app:layout_constraintTop_toBottomOf="@+id/iv_movie_duration" />
+
+
+          <ImageButton
+            android:id="@+id/iv_revenue"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_revenu"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_end"
+            app:layout_constraintStart_toEndOf="@+id/iv_movie_duration"
+            app:layout_constraintTop_toTopOf="@+id/iv_movie_duration" />
+
+
+          <TextView
+            android:id="@+id/tv_revenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_revenue"
+            app:layout_constraintStart_toStartOf="@+id/iv_revenue"
+            app:layout_constraintTop_toBottomOf="@+id/iv_revenue" />
+
+
+          <!-- ================= END of Chain  =================== -->
+
+
+          <!--                    <ImageView-->
+          <!--                        android:id="@+id/img_star"-->
+          <!--                        android:layout_width="36dp"-->
+          <!--                        android:layout_height="36dp"-->
+          <!--                        android:layout_marginStart="100dp"-->
+          <!--                        android:layout_marginTop="8dp"-->
+          <!--                        android:src="@drawable/ic_thumb_up_black_24dp"-->
+          <!--                        app:layout_constraintStart_toStartOf="parent"-->
+          <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+          <!--                    <ImageView-->
+
+          <!--                        android:id="@+id/img_runtime"-->
+          <!--                        android:layout_width="36dp"-->
+          <!--                        android:layout_height="36dp"-->
+          <!--                        android:layout_marginTop="8dp"-->
+          <!--                        android:layout_marginEnd="100dp"-->
+          <!--                        android:src="@drawable/img_runtime"-->
+          <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+          <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+          <!--                    <TextView-->
+          <!--                        android:id="@+id/tv_revenue"-->
+          <!--                        android:layout_width="wrap_content"-->
+          <!--                        android:layout_height="wrap_content"-->
+          <!--                        android:layout_marginTop="8dp"-->
+          <!--                        app:layout_constraintEnd_toEndOf="@+id/img_star"-->
+          <!--                        app:layout_constraintStart_toStartOf="@+id/img_star"-->
+          <!--                        app:layout_constraintTop_toBottomOf="@+id/img_star" />-->
+
+          <!--                    <TextView-->
+          <!--                        android:id="@+id/tv_duration"-->
+          <!--                        android:layout_width="wrap_content"-->
+          <!--                        android:layout_height="wrap_content"-->
+          <!--                        android:layout_marginTop="8dp"-->
+          <!--                        app:layout_constraintEnd_toEndOf="@+id/img_runtime"-->
+          <!--                        app:layout_constraintStart_toStartOf="@+id/img_runtime"-->
+          <!--                        app:layout_constraintTop_toBottomOf="@+id/img_runtime" />-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/card">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_margin="10dp">
+
+
+          <ImageButton
+            android:id="@+id/ib_total_vote"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_thumb_up_black_24dp"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent" />
+
+          <TextView
+            android:id="@+id/tv_total_vote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/ib_total_vote"
+            app:layout_constraintStart_toStartOf="@+id/ib_total_vote"
+            app:layout_constraintTop_toBottomOf="@+id/ib_total_vote" />
+
+
+          <TextView
+            android:id="@+id/tv_overview"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ib_total_vote"
+            app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+      </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.core.widget.NestedScrollView>
+</layout>

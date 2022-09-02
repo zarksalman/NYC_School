@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.squareup.retrofit2:adapter-guava:2.5.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/adapter-guava/2.5.0/68a1cabf7ac70757ccb90772b0ccb3c173e579d8/adapter-guava-2.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/adapter-guava/2.5.0/2fefd06676466e0e161445d26d4701cde6e88087/adapter-guava-2.5.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/adapter-guava/2.5.0/81cc22d3b49519a05277571ae0e52c0fbc815ed3/adapter-guava-2.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
